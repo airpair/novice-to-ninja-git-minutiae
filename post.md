@@ -1,5 +1,7 @@
 Using git (and GitHub) is an extremely common practice, and many of us never use more than the standard fare that git has to offer: fetch, pull, checkout, commit, push, merge. Its true power is often taken for granted, but is exposed in the most (or some not so) dire situations.
 
+In this post, I would like to demonstrate some of Git's lesser known arsenal that have both enhanced my efficiency and protected my sanity. I am assuming the reader has a basic command of Git. If you need to brush up, [GitHub's Hello World](https://guides.github.com/activities/hello-world/) guide is a great refresher.
+
 ### Undo your last commit.
 
 ```
@@ -12,7 +14,7 @@ $ git commit -c ORIG_HEAD     (5)
 
 #### Explanation
 
-1. This is what you want to undo
+1. This is what you want to undo.
 2. This is most often done when you remembered what you just committed is incomplete, or you misspelled your commit message1, or both. Leaves working tree as it was before "commit".
 3. Make corrections to working tree files.
 4. Stage changes for commit.
@@ -45,3 +47,8 @@ Often times, when working on a larger project involving a suite of applications 
 Well, now understanding and managing version interdependency is a task that can be done in code, using Git! Git submodules allow you to have context of separate Git repositories in a separate repo. Leveraging this functionality, we can create a "meta" repository that links to a specific tag (or release) of a child repository. Doing this, we can create a suite of tags that represents a known working set of applications.
 
 Git Submodules deserve their own post, quite possibly their own book, so I'll just leave this link to an [Atlassian blog post that goes into great detail about Git Submodules](http://blogs.atlassian.com/2013/03/git-submodules-workflows-tips/).
+
+
+## In Conclusion
+
+Having more knowledge of Git's out of the box functionality can drastically improve your workflow, as well as save hours of headache and heartache. If there's any interest, I can turn this post into a series -- I am open to suggestion and inquiry for future topics! (Git rebase workflow, anyone?)
