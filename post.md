@@ -5,11 +5,11 @@ In this post, I would like to demonstrate some of Git's lesser known arsenal tha
 ### Undo your last commit.
 
 ```
-$ git commit ...              (1)
-$ git reset --soft HEAD~1     (2)
-<< edit files as necessary >> (3)
-$ git add ....                (4)
-$ git commit -c ORIG_HEAD     (5)
+$ git commit ...                         (1)
+$ git reset --soft HEAD~1                (2)
+<< edit files as necessary >>            (3)
+$ git add ....                           (4)
+$ git commit --reedit-message ORIG_HEAD  (5)
 ```
 
 #### Explanation
@@ -18,7 +18,7 @@ $ git commit -c ORIG_HEAD     (5)
 2. This is most often done when you remembered what you just committed is incomplete, or you misspelled your commit message1, or both. Leaves working tree as it was before "commit".
 3. Make corrections to working tree files.
 4. Stage changes for commit.
-5. Commit the changes, reusing the old commit message. `reset` copied the old head to `.git/ORIG_HEAD`; `commit` with `-c ORIG_HEAD` will open an editor, which initially contains the log message from the old commit and allows you to edit it. If you do not need to edit the message, you could use the `-C` option instead.
+5. Commit the changes, editing the old commit message. `reset` copied the old head to `.git/ORIG_HEAD`; `commit` with `--reedit-message ORIG_HEAD` (or `-c ORIG_HEAD`) will open an editor, which initially contains the log message from the old commit and allows you to edit it. If you do not need to edit the message, you could use the `--reuse-message` (or `-C`) option instead.
 
 [Originally answered on Stack Overflow.](http://stackoverflow.com/questions/927358/how-to-undo-the-last-commit)
 
